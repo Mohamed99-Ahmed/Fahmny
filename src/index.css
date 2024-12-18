@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Adding some style to components layer and layer utilites can change in it im my components */
+@layer components {
+    body{
+        font-family: "Amiri", serif;
+    }
+    /* start nav */
+    nav{
+        font-family: "Kufam", sans-serif;
+    }
+    .navLink.active  {
+      color: rgb(94 8 255 / 73%);
+    }
+    /* global style  in my website*/
+    /*? glocal button */
+.gbtn {
+    background: rgb(94 8 255 / 73%);
+    border: none;
+    position: relative;
+    z-index: 1;
+  }
+  .gbtn:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: rgb(90 80 109 / 86%);
+    border-radius: 5px;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+  }
+  .gbtn:hover {
+    color: #fff;
+  }
+  .gbtn:hover:after {
+    left: 0;
+    width: 100%;
+  }
+  .gbtn:active {
+    top: 2px;
+  }
+  /*?loaders css file */
+
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}
+}
